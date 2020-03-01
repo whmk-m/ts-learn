@@ -9,15 +9,14 @@
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  git clone xxx.git
+2.  npm install
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  npm run start 本地启动项目
+2.  npm run build  打包项目dist文件
+3.  npm run test  执行项目单元测试
 
 #### 参与贡献
 
