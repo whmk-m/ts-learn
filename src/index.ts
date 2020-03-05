@@ -8,4 +8,9 @@
 // import './../demo/function'
 
 // 类型断言
-import './../demo/as'
+// import './../demo/as'
+
+// 需要安装@types/jquery声明文件，ts编辑器才能提供正常的代码补全和提示
+import $ from 'jquery'
+import _ from 'lodash'
+$('.app').html(_.join(['hello','jquery','lodash'],','))
