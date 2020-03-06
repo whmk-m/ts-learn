@@ -11,6 +11,11 @@
 // import './../demo/as'
 
 // 需要安装@types/jquery声明文件，ts编辑器才能提供正常的代码补全和提示
-import $ from 'jquery'
-import _ from 'lodash'
-$('.app').html(_.join(['hello','jquery','lodash'],','))
+// import $ from 'jquery'
+// import _ from 'lodash'
+// $('.app').html(_.join(['hello','jquery','lodash'],','))
+
+// 引入自己发布的包 whmk-library-demo
+// @ts-ignore
+// import whmkLibraryDemo from 'whmk-library-demo'
+// console.log(whmkLibraryDemo.math.add(100,200))
