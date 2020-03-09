@@ -15,7 +15,11 @@
 // import _ from 'lodash'
 // $('.app').html(_.join(['hello','jquery','lodash'],','))
 
-// 引入自己发布的包 whmk-library-demo
-// @ts-ignore
-// import whmkLibraryDemo from 'whmk-library-demo'
-// console.log(whmkLibraryDemo.math.add(100,200))
+// 类型别名
+// import './../demo/type'
+
+// 元祖
+// import './../demo/tuple'
+
+// 枚举
+import './../demo/enum'

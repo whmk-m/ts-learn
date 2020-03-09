@@ -21,7 +21,7 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2",
-    "whmk-library-demo": "^1.0.0"
+    "whmk-library-demo": "^1.0.4"
   },
   "dependencies": {
     "@types/lodash": "^4.14.149",
