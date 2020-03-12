@@ -18,3 +18,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // import './../demo/tuple'
 // 枚举
 require("./../demo/enum");
+// 基础类型
+// import './../demo/primary'

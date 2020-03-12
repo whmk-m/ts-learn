@@ -23,3 +23,6 @@
 
 // 枚举
 import './../demo/enum'
+
+// 基础类型
+// import './../demo/primary'

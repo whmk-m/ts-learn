@@ -6,6 +6,7 @@
     // 访问元祖类型的索引值时，可访问的属性方法需要符合其类型的,比如number下没有slice方法
     console.log(tom[0].slice(1),tom[1].toPrecision(3),tom[2])
     // 添加新的元素时，提供的类型需要符合其所有类型中的一种，也就是:联合类型
-    tom.push(22)
+    tom.push(22) // 可以添加值
+    //console.log(tom[3]) // 但是不允许进行访问, 实际开发过程中不推荐这样使用
     console.log(tom)
 }
