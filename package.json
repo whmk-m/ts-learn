@@ -5,17 +5,22 @@
   "main": "./src/index.ts",
   "scripts": {
     "start": "webpack-dev-server --mode=development --config  ./build/webpack.dev.js",
+    "prebuild": "rimraf dist2 && mkdir dist1",
     "build": "webpack --mode=production --config ./build/webpack.prod.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postbuild": "rimraf dist1 && mkdir dist2",
+    "test": "node demo/preAndpost.js"
   },
+  "env": "env",
   "keywords": [],
-  "author": "",
+  "author": "wang.mao",
   "license": "ISC",
   "devDependencies": {
+    "@types/jquery": "^3.3.33",
     "chalk": "^3.0.0",
     "clean-webpack-plugin": "^1.0.0",
     "fs-extra": "^8.1.0",
     "html-webpack-plugin": "^3.2.0",
+    "rimraf": "^3.0.2",
     "ora": "^4.0.3",
     "shelljs": "^0.8.3",
     "ts-loader": "^6.2.1",
@@ -23,6 +28,12 @@
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "whmk-library-demo": "^1.0.4"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.149",
+    "jquery": "^3.4.1",
+    "lodash": "^4.17.15"
   }
 }
