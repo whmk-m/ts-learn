@@ -22,7 +22,10 @@
 // import './../demo/tuple'
 
 // 枚举
-import './../demo/enum'
+// import './../demo/enum'
 
 // 基础类型
 // import './../demo/primary'
+
+// 类
+import './../demo/class'
