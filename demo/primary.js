@@ -1,5 +1,37 @@
 "use strict";
 {
+    // 指定类型string
+    let hello = 'Hello Typescript!';
+    console.log(hello);
+}
+{
+    // any任意类型，类似于js
+    let anyThing = 'hello';
+    anyThing = {};
+    console.log(anyThing.myName = { firstName: 'wang' });
+    console.log(anyThing.myName.firstName);
+}
+{
+    // 不指定类型或不赋初始值，默认any类型
+    let someType;
+    someType = 7;
+    someType = true;
+    console.log(someType);
+}
+{
+    // 类型推论：不指定类型但赋初始值，默认指向该类型
+    let someType = 7;
+    someType = 10;
+    console.log(someType);
+}
+{
+    // 联合类型 用 | 表示多个类型
+    let a = 10;
+    a = 'wm';
+    a = true;
+    console.log(a);
+}
+{
     // 声明一个对象.加上可选的对象属性
     let obj = { x: 10, y: 20 };
     obj.x = 1;

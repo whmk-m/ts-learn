@@ -3,15 +3,15 @@
 // 用 implements 关键字来实现。这个特性大大提高了面向对象的灵活性。
 
 {
-    // 类实现接口  一个类可以实现多个接口
-    interface Alarm {  // 定义接口，听取公共方法
+    // 定义接口，提取公共方法
+    interface Alarm {
         alert(type:string):any
     }
 
     class Door {
         constructor(public name:string) {}
     }
-
+    // 类实现接口  一个类可以实现多个接口
     class SecurityDoor extends Door implements Alarm {  // 使用关键字 implements 实现这个接口的方法
         constructor(name:string) {
             super(name);

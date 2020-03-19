@@ -8,6 +8,7 @@
             this.name = name;
         }
     }
+    // 类实现接口  一个类可以实现多个接口
     class SecurityDoor extends Door {
         constructor(name) {
             super(name);
