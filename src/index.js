@@ -1,7 +1,7 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 //  原始类型、联合类型、任意类型、类型推论、对象的类型-接口
-require("./../demo/interface");
+// import './../demo/interface'
+Object.defineProperty(exports, "__esModule", { value: true });
 // 数组的类型
 // import './../demo/array'
 // 函数的类型
@@ -24,3 +24,5 @@ require("./../demo/interface");
 // import './../demo/class'
 // 类与接口
 // import './../demo/classAndInterface'
+// 泛型
+require("./../demo/generics");
