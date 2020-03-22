@@ -108,3 +108,68 @@
 
     console.log(cat)
 }
+
+// 如何理解接口继承了带有私有属性和受保护成员的类 ？
+{
+    class Auto {
+        // 定义了一个私有的成员
+        private length: number;
+        constructor(length: number) {
+            this.length = length;
+        }
+    }
+
+    // 接口继承类时，如果继承了带有私有属性和受保护成员的类，那么除了Auto这个类的子类外，别的类了就不能实现这个接口了
+    // 注意，这么做的目的是限定接口的使用范围，并不会真正为这个接口添加类的私有和受保护属性（实际上接口也没有这种类型的属性），而这个限定范围就是：只能由子类来实现这个接口。
+    interface AutoInterface extends Auto {}
+
+    // 非Auto 的子类不能实现这个接口
+    class Cycle implements AutoInterface {
+        // 就算按照Auto 方式添加了私有属性length 也不能通过编译
+        // private length: number;
+        // constructor(length: number) {
+        //     this.length = length;
+        // }
+    }
+
+
+    // Auto 的子类能实现这个接口
+    class Bus extends Auto implements AutoInterface {}
+
+    let bus = new Bus(10);
+    // 由于length 在父类中是私有的属性，只能在父类自己能访问，不能在子类中访问和其他形式的访问  报错是正常的
+    console.log(bus,bus.length); // Bus {length: 10}
+}
+
+{
+    // 定义一个类
+    class Auto {
+        private length: number;
+        constructor(public value:number,length: number) {
+            this.length = length;
+        }
+    }
+
+    // 定义一个接口继承Auto类，并添加了一个sayHello 方法
+    interface AutoInterface extends Auto {
+        sayHello:() => void
+    }
+
+    // Bus类继承Auto类，并实现接口AutoInterface
+    class Bus extends Auto implements AutoInterface {
+        // 定义构造函数 使用super实例父类的属性
+        constructor(value:number,length:number) {
+            super(value,length);
+        }
+        // 定义并实现接口的方法
+        sayHello(){
+            console.log('hello Bus!')
+        }
+    }
+
+    let bus = new Bus(520,100);
+    bus.sayHello()
+    // 由于length 在父类中是私有的属性，只能在父类自己能访问，不能在子类中访问和其他形式的访问
+    // value 是 public属性所以能以任何形式的访问
+    console.log(bus,bus.length,bus.value); // Bus {value:520,length: 10}
+}
