@@ -1,5 +1,6 @@
 {
     // js ES7中类使用方式  定义属性可不用在constructor中
+    // “类的成员属性”都是实例属性，而不是原型属性，“类的成员方法”都是“原型”方法。
     class People {
         name='wm';
         constructor() {
@@ -122,7 +123,10 @@
     // 抽象类 不能被实例化，只能被继承，并且抽象方法必须由子类去实现
     abstract class Animal{
         protected constructor(public weight:string) {}
-        abstract sayWeight():any // 并且抽象方法必须由子类去实现
+        sayHello(type:string):string{ //  普通的原型方法
+           return `hello ${type}!`
+        }
+        abstract sayWeight():any // 定义一个抽象方法，并且必须由子类去实现
     }
 
     // const dog = new Animal('100kg')  // 抽象类不能被实例化
@@ -133,10 +137,53 @@
             super(weight);
         }
         sayWeight(): any {  // 抽象方法必须由子类去实现
-            return `I'm ${this.weight}`
+            return `Cat:I'm ${this.weight}`
         }
     }
 
     const cat:Cat =  new Cat('250kg')  // 为实例的对象添加类型：Cat，如果实例了其他类就会报错
-    console.log(cat.weight,cat.sayWeight())
+    console.log(cat.weight,cat.sayHello('cat'),cat.sayWeight())
+
+    class Dog extends Animal{  // 抽象类只能被继承
+        constructor(weight:string) {
+            super(weight);
+        }
+        sayWeight(): any {  // 抽象方法必须由子类去实现
+            return `Dog:I'm ${this.weight}`
+        }
+    }
+
+    const dog:Dog =  new Dog('50kg')
+
+    const animals:Animal[] = [cat,dog]
+    animals.forEach(item => console.log(item.sayWeight()))  // 根据不同的实例，执行同一个方法的不同实现
+}
+
+{
+    // 返回this 实现链式调用
+    class WorkFlow {
+        parentStep1():any{
+            console.log('parentStep1...',this)
+            return this
+        }
+        parentStep2():any {
+            console.log('parentStep2...',this)
+            return this
+        }
+    }
+    new WorkFlow().parentStep1().parentStep2()
+
+    // 子类继承父类，实现父子类之间混合链式调用
+    class MyFlow  extends WorkFlow{
+        myStep1():any{
+            console.log('myStep1...',this)
+            return this
+        }
+        myStep2():any{
+            console.log('myStep2...',this)
+            return this
+        }
+    }
+
+    new MyFlow().myStep1().parentStep1().myStep2().parentStep2()
 }

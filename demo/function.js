@@ -38,6 +38,12 @@
     console.log(sayHello('whmk', 12));
 }
 {
+    let add = function (a, b) {
+        return a + b;
+    };
+    console.log(add(10, 30));
+}
+{
     // 使用 ? 表示可选的函数参数,可选的函数参数一定要放在确定参数的后面
     function f(name, age, grade) {
         console.log(name, age, grade);

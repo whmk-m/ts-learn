@@ -72,7 +72,7 @@
             return new Array(this.length).fill(this.value);
         }
     }
-    let createArray = new CreateArray('LiuHui', 2);
+    let createArray = new CreateArray('LiuNan', 2);
     // create 方法是其原型上的
     console.log(createArray, createArray.create());
 }
@@ -98,7 +98,7 @@
         }
     }
     //  使用其默认类型
-    let createArray1 = new CreateArray('LiuHui', 2);
+    let createArray1 = new CreateArray('LiuNan', 2);
     // 定义类型为number
     let createArray2 = new CreateArray(999, 2);
     // create 方法是其原型上的

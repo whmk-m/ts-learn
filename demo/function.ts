@@ -35,7 +35,6 @@
     // 在 TypeScript 的类型定义中，=> 用来表示函数的定义，左边是输入类型，需要用括号括起来，右边是输出类型。
 }
 
-
 {
     // 用接口来定义函数的输入输出
     interface FunctionInter{
@@ -47,6 +46,17 @@
         return  age > 20
     }
     console.log(sayHello('whmk', 12))
+}
+
+{
+    // 使用  type 类型别名来定义一个函数的输入输出
+    type Add = (x:number,y:number) => number;
+
+    let add:Add = function (a,b) {
+        return a +b;
+    }
+
+    console.log(add(10,30));
 }
 
 {
@@ -95,4 +105,3 @@
     console.log(reverse(783))
     console.log(reverse('I Love You'))
 }
-

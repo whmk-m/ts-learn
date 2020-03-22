@@ -1,6 +1,7 @@
 "use strict";
 {
     // js ES7中类使用方式  定义属性可不用在constructor中
+    // “类的成员属性”都是实例属性，而不是原型属性，“类的成员方法”都是“原型”方法。
     class People {
         constructor() {
             this.name = 'wm';
@@ -106,6 +107,9 @@
         constructor(weight) {
             this.weight = weight;
         }
+        sayHello(type) {
+            return `hello ${type}!`;
+        }
     }
     // const dog = new Animal('100kg')  // 抽象类不能被实例化
     // console.log(dog.weight,dog.sayWeight())
@@ -114,9 +118,46 @@
             super(weight);
         }
         sayWeight() {
-            return `I'm ${this.weight}`;
+            return `Cat:I'm ${this.weight}`;
         }
     }
     const cat = new Cat('250kg'); // 为实例的对象添加类型：Cat，如果实例了其他类就会报错
-    console.log(cat.weight, cat.sayWeight());
+    console.log(cat.weight, cat.sayHello('cat'), cat.sayWeight());
+    class Dog extends Animal {
+        constructor(weight) {
+            super(weight);
+        }
+        sayWeight() {
+            return `Dog:I'm ${this.weight}`;
+        }
+    }
+    const dog = new Dog('50kg');
+    const animals = [cat, dog];
+    animals.forEach(item => console.log(item.sayWeight())); // 根据不同的实例，执行同一个方法的不同实现
+}
+{
+    // 返回this 实现链式调用
+    class WorkFlow {
+        parentStep1() {
+            console.log('parentStep1...', this);
+            return this;
+        }
+        parentStep2() {
+            console.log('parentStep2...', this);
+            return this;
+        }
+    }
+    new WorkFlow().parentStep1().parentStep2();
+    // 子类继承父类，实现父子类之间混合链式调用
+    class MyFlow extends WorkFlow {
+        myStep1() {
+            console.log('myStep1...', this);
+            return this;
+        }
+        myStep2() {
+            console.log('myStep2...', this);
+            return this;
+        }
+    }
+    new MyFlow().myStep1().parentStep1().myStep2().parentStep2();
 }
