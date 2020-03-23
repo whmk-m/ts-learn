@@ -28,10 +28,13 @@
 // import './../demo/primary'
 
 // 类
-import './../demo/class'
+// import './../demo/class'
 
 // 类与接口
 // import './../demo/classAndInterface'
 
 // 泛型
 // import './../demo/generics'
+
+// 声明合并
+import './../demo/declareMerge'

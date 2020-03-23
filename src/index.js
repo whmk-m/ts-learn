@@ -21,8 +21,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // 基础类型
 // import './../demo/primary'
 // 类
-require("./../demo/class");
+// import './../demo/class'
 // 类与接口
 // import './../demo/classAndInterface'
 // 泛型
 // import './../demo/generics'
+// 声明合并
+require("./../demo/declareMerge");
