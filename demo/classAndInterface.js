@@ -72,15 +72,20 @@
             this.length = length;
         }
     }
-    // 非Auto 的子类不能实现这个接口
-    class Cycle {
-    }
+    // 非Auto 的子类不能实现这个接口 会报错
+    // class Cycle implements AutoInterface {
+    // 就算按照Auto 方式添加了私有属性length 也不能通过编译
+    // private length: number;
+    // constructor(length: number) {
+    //     this.length = length;
+    // }
+    // }
     // Auto 的子类能实现这个接口
     class Bus extends Auto {
     }
     let bus = new Bus(10);
     // 由于length 在父类中是私有的属性，只能在父类自己能访问，不能在子类中访问和其他形式的访问  报错是正常的
-    console.log(bus, bus.length); // Bus {length: 10}
+    // console.log(bus,bus.length); // Bus {length: 10}
 }
 {
     // 定义一个类
@@ -105,5 +110,5 @@
     bus.sayHello();
     // 由于length 在父类中是私有的属性，只能在父类自己能访问，不能在子类中访问和其他形式的访问
     // value 是 public属性所以能以任何形式的访问
-    console.log(bus, bus.length, bus.value); // Bus {value:520,length: 10}
+    // console.log(bus,bus.length,bus.value); // Bus {value:520,length: 10}
 }

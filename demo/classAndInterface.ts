@@ -123,14 +123,14 @@
     // 注意，这么做的目的是限定接口的使用范围，并不会真正为这个接口添加类的私有和受保护属性（实际上接口也没有这种类型的属性），而这个限定范围就是：只能由子类来实现这个接口。
     interface AutoInterface extends Auto {}
 
-    // 非Auto 的子类不能实现这个接口
-    class Cycle implements AutoInterface {
+    // 非Auto 的子类不能实现这个接口 会报错
+    // class Cycle implements AutoInterface {
         // 就算按照Auto 方式添加了私有属性length 也不能通过编译
         // private length: number;
         // constructor(length: number) {
         //     this.length = length;
         // }
-    }
+    // }
 
 
     // Auto 的子类能实现这个接口
@@ -138,7 +138,7 @@
 
     let bus = new Bus(10);
     // 由于length 在父类中是私有的属性，只能在父类自己能访问，不能在子类中访问和其他形式的访问  报错是正常的
-    console.log(bus,bus.length); // Bus {length: 10}
+    // console.log(bus,bus.length); // Bus {length: 10}
 }
 
 {
@@ -171,5 +171,5 @@
     bus.sayHello()
     // 由于length 在父类中是私有的属性，只能在父类自己能访问，不能在子类中访问和其他形式的访问
     // value 是 public属性所以能以任何形式的访问
-    console.log(bus,bus.length,bus.value); // Bus {value:520,length: 10}
+    // console.log(bus,bus.length,bus.value); // Bus {value:520,length: 10}
 }
