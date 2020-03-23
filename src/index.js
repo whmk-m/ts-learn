@@ -26,3 +26,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("./../demo/classAndInterface");
 // 泛型
 // import './../demo/generics'
+// 声明合并
+require("./../demo/declareMerge");
