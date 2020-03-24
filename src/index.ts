@@ -31,10 +31,10 @@
 // import './../demo/class'
 
 // 类与接口
-import './../demo/classAndInterface'
+// import './../demo/classAndInterface'
 
 // 泛型
-// import './../demo/generics'
+import './../demo/generics'
 
 // 声明合并
-import './../demo/declareMerge'
+// import './../demo/declareMerge'

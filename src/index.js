@@ -23,8 +23,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // 类
 // import './../demo/class'
 // 类与接口
-require("./../demo/classAndInterface");
+// import './../demo/classAndInterface'
 // 泛型
-// import './../demo/generics'
+require("./../demo/generics");
 // 声明合并
-require("./../demo/declareMerge");
+// import './../demo/declareMerge'

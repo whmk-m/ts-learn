@@ -55,6 +55,28 @@
     console.log(createArray(50, 30));
 }
 {
+    // 定义一个对象，属性个数与名称都要与接口相匹配
+    let obj = {
+        name: 'Li Rui',
+        age: 22,
+        sayHello: function (value) {
+            return value;
+        }
+    };
+    console.log(obj.name, obj.sayHello('Hello ChengDu!'));
+}
+{
+    // 定义一个对象，属性个数与名称都要与接口相匹配
+    let obj = {
+        name: 'Li.lian.jie',
+        age: 22,
+        sayHello: function (value) {
+            return value;
+        }
+    };
+    console.log(obj.name, obj.sayHello('Hello Beijing!'));
+}
+{
     // 注意，此时在使用泛型接口的时候，需要函数定义时就定义泛型的类型，而不是在调用函数时才定义泛型的类型
     let createArray = function (value, length) {
         return new Array(length).fill(value);
@@ -64,6 +86,7 @@
 {
     // 泛型类 泛型也可以用于类的类型定义中
     class CreateArray {
+        // static age:T  // 注意在类中 泛型不能定义静态成员（静态属性和方法）
         constructor(value, length) {
             this.value = value;
             this.length = length;
@@ -104,3 +127,7 @@
     // create 方法是其原型上的
     console.log(createArray1.create(), createArray2.create());
 }
+// 使用泛型的好处
+// 1. 函数和类可以轻松地支持多种类型，增强程序的扩展性
+// 2. 不必写多条函数重载、冗长的联合类型声明，增强代码可读性
+// 3. 灵活控制类型之间的约束
